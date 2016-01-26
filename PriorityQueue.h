@@ -6,18 +6,18 @@ template<class ElementType>
 class PriorityQueue
 {
 public:
-	PriorityQueue() { }
+    PriorityQueue() { }
 
-	void Enqueue( ElementType element );
-	void Dequeue( ElementType& element );
-	void Peek( ElementType& element ) const;
+    void Enqueue( ElementType element );
+    void Dequeue( ElementType& element );
+    void Peek( ElementType& element ) const;
 
-	inline int  Size()	  const		{ return maxHeap.Size(); }
-	inline bool IsEmpty() const		{ return maxHeap.Size() == 0; }
+    inline int  Size()	  const		{ return maxHeap.Size(); }
+    inline bool IsEmpty() const		{ return maxHeap.Size() == 0; }
 
 
 private:
-	MaxHeap<ElementType> maxHeap;
+    MaxHeap<ElementType> maxHeap;
 };
 
 
@@ -26,17 +26,17 @@ private:
 template<class ElementType>
 void PriorityQueue<ElementType>::Enqueue( ElementType element )
 {
-	maxHeap.Append( element );
+    maxHeap.Append( element );
 }
 
 template<class ElementType>
 void PriorityQueue<ElementType>::Dequeue( ElementType& element )
 {
-	element = maxHeap.RemoveNext();
+    element = maxHeap.RemoveNext();
 }
 
 template<class ElementType>
 void PriorityQueue<ElementType>::Peek( ElementType& element ) const
 {
-	element = maxHeap.Peek();
+    element = maxHeap.Peek();
 }
